@@ -203,6 +203,8 @@ class Node():
         # Rewrite all @root/ urls.
         page_html = utils.rewrite_urls(page_html, output_filepath)
 
+        page_html += "\n"
+
         # Write the page to disk. Avoid overwriting identical files.
         if not hashes.match(output_filepath, page_html):
             utils.writefile(output_filepath, page_html)
