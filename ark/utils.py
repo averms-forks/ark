@@ -125,13 +125,7 @@ def rewrite_urls(html: str, filepath: str):
 
         # 1. We have a link to the homepage.
         if url == '':
-            if suffix == '/':
-                if depth == 1:
-                    url = '' if fragment else '#'
-                else:
-                    url = prefix
-            else:
-                url = prefix + 'index' + suffix
+            url = '/'
 
         # 2. We have a link to a generated node page.
         elif url.endswith('//'):
